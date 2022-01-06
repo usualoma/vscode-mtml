@@ -152,6 +152,19 @@ async function validateTextDocument(textDocument: TextDocument): Promise<void> {
       };
       diagnostics.push(diagnostic);
     }
+    else if ((m = line.match(/(.*<)(mt:contents)/i)) !== null) {
+      const diagnostic: Diagnostic = {
+        severity: DiagnosticSeverity.Error,
+        range: {
+          start: { line: i, character: m[1].length },
+          end: { line: i, character: m[1].length + m[2].length },
+        },
+        message: `${m[2]}はMovableType.netでは未サポートです。`,
+        code: "mtnet",
+        source: "mtml",
+      };
+      diagnostics.push(diagnostic);
+    }
   }
 
   // Send the computed diagnostics to VSCode.

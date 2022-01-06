@@ -90,12 +90,11 @@ export function activate(context: vscode.ExtensionContext) {
             kind: CompletionItemKind.Text,
             data: 3,
           },
-        ];    
-      }
-      else if (ctxText.match(/<mt:EntryTitle [^>]*$/)) {
+        ];
+      } else if (ctxText.match(/<mt:EntryTitle [^>]*$/)) {
         return [
           {
-            label: `encode_html="1"`,
+            label: `encode_html`,
             kind: CompletionItemKind.Text,
             data: 1,
           },
@@ -104,7 +103,7 @@ export function activate(context: vscode.ExtensionContext) {
             kind: CompletionItemKind.Text,
             data: 2,
           },
-        ];    
+        ];
       }
 
       return [
@@ -123,7 +122,54 @@ export function activate(context: vscode.ExtensionContext) {
           kind: CompletionItemKind.Text,
           data: 3,
         },
+        {
+          label: "mt:Contents",
+          kind: CompletionItemKind.Text,
+          data: 4,
+        },
       ];
+    },
+  });
+
+  vscode.commands.registerCommand("mtml.OpenTagManual", (tag: string) => {
+    vscode.env.openExternal(
+      vscode.Uri.parse(
+        `https://www.movabletype.jp/documentation/appendices/tags/${tag.toLowerCase()}.html`
+      )
+    );
+  });
+
+  vscode.languages.registerCodeLensProvider("mtml", {
+    provideCodeLenses(document, token) {
+      const lenses: vscode.CodeLens[] = [];
+
+      for (let i = 0; i < document.lineCount; i++) {
+        const line = document.lineAt(i);
+        const all =
+          line.text.match(/(.*<mt:?entries|entrytitle|entrybody|contents)/gi) || [];
+        let offset = 0;
+        all.forEach((m) => {
+          const tag = m.replace(/.*mt:?/, "");
+
+          offset += m.length;
+
+          const lens = new vscode.CodeLens(
+            new vscode.Range(i, offset - tag.length, i, offset),
+            {
+              title: `mt:${tag}`,
+              command: "mtml.OpenTagManual",
+              arguments: [tag],
+            }
+          );
+          lenses.push(lens);
+        });
+      }
+
+      return lenses;
+    },
+    resolveCodeLens(codeLens, token) {
+      console.log(codeLens.command);
+      return undefined;
     },
   });
 }
