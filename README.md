@@ -4,6 +4,10 @@ This extension is still in development.
 
 Add a language "mtml".
 
+## Screen capture
+
+https://user-images.githubusercontent.com/30598/148353223-ba66d2e0-8707-473b-aa99-97bc6a6d0400.mov
+
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
