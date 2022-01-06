@@ -1,6 +1,8 @@
+This extension is still in development.
+
 # mtml README
 
-This is the README for your extension "mtml". After writing up a brief description, we recommend including the following sections.
+Add a language "mtml".
 
 ## Features
 
@@ -66,5 +68,3 @@ Ensure that you've read through the extensions guidelines and follow the best pr
 
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
