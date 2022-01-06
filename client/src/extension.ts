@@ -146,7 +146,7 @@ export function activate(context: vscode.ExtensionContext) {
       for (let i = 0; i < document.lineCount; i++) {
         const line = document.lineAt(i);
         const all =
-          line.text.match(/(.*<mt:?entries|entrytitle|entrybody|contents)/gi) || [];
+          line.text.match(/(.*<mt:?entries|.*<mt:?entrytitle|.*<mt:?entrybody|.*<mt:?contents)/gi) || [];
         let offset = 0;
         all.forEach((m) => {
           const tag = m.replace(/.*mt:?/, "");
