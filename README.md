@@ -8,6 +8,10 @@ Add a language "mtml".
 
 https://user-images.githubusercontent.com/30598/148353223-ba66d2e0-8707-473b-aa99-97bc6a6d0400.mov
 
+### Syntax highlighting
+
+<img src="https://raw.githubusercontent.com/usualoma/vscode-mtml/main/images/syntax-highlighting.jpg" alt="Syntax highlighting" />
+
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
