@@ -1,0 +1,95 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "fileTypes": ["mtml"],
+  "scopeName": "source.mtml.embedded",
+  "injectionSelector": "L:source.mtml",
+  "patterns": [
+    {
+      "include": "#tag"
+    }
+  ],
+  "repository": {
+    "tag": {
+      "begin": "</?\\$?(?=mt)",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.tag.begin.mtml"
+        }
+      },
+      "end": "\\$?>",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.tag.end.mtml"
+        }
+      },
+      "patterns": [
+        {
+          "include": "#tag-name"
+        },
+        {
+          "include": "#attributes"
+        }
+      ]
+    },
+    "tag-name": {
+      "match": "\\bmt[a-zA-Z:]*(?:\\b|$)",
+      "name": "entity.name.tag.mtml"
+    },
+    "attributes": {
+      "patterns": [
+        {
+          "include": "#attribute"
+        }
+      ]
+    },
+    "attribute": {
+      "patterns": [
+        {
+          "include": "#attribute-key"
+        },
+        {
+          "include": "#attribute-value-regexp"
+        },
+        {
+          "include": "#attribute-value"
+        },
+        {
+          "include": "#attribute-key-value"
+        },
+        {
+          "include": "#attribute-value-value"
+        }
+      ]
+    },
+    "attribute-key": {
+      "name": "entity.other.attribute-name.mtml",
+      "match": "\\w+"
+    },
+    "attribute-value-regexp": {
+      "begin": "\"(?=/)",
+      "end": "(?<=/)\"",
+      "captures": {
+        "0": {
+          "name": "string.quoted.double.mtml"
+        }
+      },
+      "patterns": [
+        {
+          "include": "source.perl"
+        }
+      ]
+    },
+    "attribute-value": {
+      "name": "string.quoted.double.mtml",
+      "match": "\"[^\"]*\"?"
+    },
+    "attribute-key-value": {
+      "name": "punctuation.separator.key-value.mtml",
+      "match": "="
+    },
+    "attribute-value-value": {
+      "name": "punctuation.separator.value-value.mtml",
+      "match": ","
+    }
+  }
+}
