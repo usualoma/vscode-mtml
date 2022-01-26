@@ -22,6 +22,7 @@
           "name": "punctuation.definition.tag.end.mtml"
         }
       },
+      "contentName": "meta.embedded.block.mtml",
       "patterns": [
         {
           "include": "#tag-name"
@@ -73,6 +74,7 @@
           "name": "string.quoted.double.mtml"
         }
       },
+      "contentName": "meta.embedded.block.perl",
       "patterns": [
         {
           "include": "source.perl"
