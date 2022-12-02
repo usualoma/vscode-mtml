@@ -1,18 +1,21 @@
 {
   "name": "mtml",
   "displayName": "MTML",
-  "description": "Language Server for MTML",
+  "description": "Syntax support for the Movable Type Markup Language.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.63.0"
   },
+  "publisher": "Taku Amano",
+  "license": "MIT",
+  "homepage": "https://github.com/usualoma/vscode-mtml/blob/main/README.md",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/usualoma/vscode-mtml.git"
+  },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
-  "activationEvents": [
-    "onLanguage:mtml"
-  ],
-  "main": "./client/out/extension.js",
   "contributes": {
     "languages": [
       {
