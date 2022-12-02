@@ -1,12 +1,12 @@
 {
-  "name": "mtml",
+  "name": "language-mtml",
   "displayName": "MTML",
   "description": "Syntax support for the Movable Type Markup Language.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.63.0"
   },
-  "publisher": "Taku Amano",
+  "publisher": "usualoma",
   "license": "MIT",
   "homepage": "https://github.com/usualoma/vscode-mtml/blob/main/README.md",
   "repository": {
