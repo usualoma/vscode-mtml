@@ -65,6 +65,9 @@
           "include": "#attribute-value"
         },
         {
+          "include": "#attribute-value-single"
+        },
+        {
           "include": "#attribute-key-value"
         },
         {
@@ -79,6 +82,10 @@
     "attribute-value": {
       "name": "string.quoted.double.mtml",
       "match": "\"[^\"]*\"?"
+    },
+    "attribute-value-single": {
+      "name": "string.quoted.single.mtml",
+      "match": "'[^']*'?"
     },
     "attribute-key-value": {
       "name": "punctuation.separator.key-value.mtml",
