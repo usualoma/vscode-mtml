@@ -45,11 +45,6 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p client; tsc -p server",
-    "watch:client": "tsc -watch -p client",
-    "watch:server": "tsc -watch -p server",
-    "pretest": "npm run compile && npm run lint",
     "lint": "eslint src --ext ts",
     "test": "node ./out/test/runTest.js"
   },
