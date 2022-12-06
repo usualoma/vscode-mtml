@@ -1,6 +1,5 @@
 {
   "comments": {
     "blockComment": ["<mt:Ignore>", "</mt:Ignore>"]
-  },
-  "brackets": [["<", ">"]]
+  }
 }

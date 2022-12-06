@@ -1,0 +1,6 @@
+{
+  "config.completionLanguages": "補完機能を有効にする言語。 \"mtml\"、\"html\"、\"css\"を指定することができます。",
+  "config.prefix": "プレフィックス。 通常\"mt:\"または\"MT\"を指定します。",
+  "config.referenceManualLanguages": "リファレンスマニュアル表示機能を有効にする言語。 \"mtml\"、\"html\"、\"css\"を指定することができます。",
+  "config.foldingLanguages": "ブロックタグの畳込み機能を有効にする言語。 \"mtml\"、\"css\"を指定することができます。"
+}
