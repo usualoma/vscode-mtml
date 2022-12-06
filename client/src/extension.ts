@@ -202,9 +202,14 @@ ${Object.values(tagData.modifiers)
                 } else if (modifier.name === "function") {
                   placeholder = `"\${1|pop,shift,count|}"`;
                 } else if (modifier.name === "name") {
-                  placeholder = `"\${1|${collectVarNames(document).join(
-                    ","
-                  )}|}"`;
+                  const varNames = collectVarNames(document);
+                  if (varNames.length >= 0) {
+                    placeholder = `"\${1|${collectVarNames(document).join(
+                      ","
+                    )}|}"`;
+                  } else {
+                    placeholder = '"${1}"';
+                  }
                 } else {
                   let value = modifier.value ?? "";
                   if (value === "N") {
