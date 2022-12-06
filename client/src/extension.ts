@@ -203,7 +203,7 @@ ${Object.values(tagData.modifiers)
                   placeholder = `"\${1|pop,shift,count|}"`;
                 } else if (modifier.name === "name") {
                   const varNames = collectVarNames(document);
-                  if (varNames.length >= 0) {
+                  if (varNames.length > 0) {
                     placeholder = `"\${1|${collectVarNames(document).join(
                       ","
                     )}|}"`;
