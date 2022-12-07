@@ -54,7 +54,7 @@ const { JSDOM } = jsdom;
       let value = "";
       if (name.indexOf("=") > -1) {
         [name, value] = name.split("=", 2);
-        value = value.replace(/"/gi, "").replace("|", ",");
+        value = value.replace(/"/gi, "").replace(/\|/g, ",");
       }
       const dd = dds[i];
       const description = dd?.textContent || "";
