@@ -2,7 +2,7 @@
   "name": "language-mtml",
   "displayName": "MTML",
   "description": "Syntax support for the Movable Type Markup Language.",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "engines": {
     "vscode": "^1.72.0"
   },
@@ -14,7 +14,8 @@
     "url": "https://github.com/usualoma/vscode-mtml.git"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Formatters"
   ],
   "activationEvents": [
     "onLanguage:mtml",
@@ -69,8 +70,19 @@
           "default": "mt:",
           "description": "%config.prefix%"
         },
-        "language-mtml.referenceManualLanguages": {
+        "language-mtml.functionTagStyle": {
           "order": 3,
+          "type": "string",
+          "default": "Dollar",
+          "description": "%config.functionTagStyle%",
+          "enum": ["Dollar", "SelfClosing"],
+          "enumDescriptions": [
+            "%config.functionTagStyle.dollar%",
+            "%config.functionTagStyle.selfClosing%"
+          ]
+        },
+        "language-mtml.referenceManualLanguages": {
+          "order": 4,
           "type": "array",
           "default": [
             "mtml",
@@ -80,7 +92,7 @@
           "description": "%config.referenceManualLanguages%"
         },
         "language-mtml.foldingLanguages": {
-          "order": 4,
+          "order": 5,
           "type": "array",
           "default": [
             "mtml",

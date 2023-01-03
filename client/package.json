@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "mtml-parser": "^0.0.3",
     "vscode-languageclient": "^7.0.0"
   },
   "devDependencies": {

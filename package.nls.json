@@ -1,6 +1,9 @@
 {
   "config.completionLanguages": "Languages in which the completion feature is enabled. We support the following three languages. \"mtml\", \"html\" and \"css\"",
   "config.prefix": "Prefix. Usually \"mt:\" or \"MT\" is used.",
+  "config.functionTagStyle": "Function tag style",
+  "config.functionTagStyle.dollar": "<$mt:EntryTitle$>",
+  "config.functionTagStyle.selfClosing": "<mt:EntryTitle/>",
   "config.referenceManualLanguages": "Languages in which the reference manual feature is enabled. We support the following three languages. \"mtml\", \"html\" and \"css\"",
   "config.foldingLanguages": "Languages in which the folding feature is enabled. We support the following three languages. \"mtml\" and \"css\""
 }

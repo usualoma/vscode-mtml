@@ -1,10 +1,12 @@
 import * as vscode from "vscode";
+import { parse, serialize, FunctionTagStyle } from "mtml-parser";
 import tags from "./tags.json";
 import modifiers from "./modifiers.json";
 
 interface Config {
   completionLanguages: string[];
   prefix: string;
+  functionTagStyle: keyof typeof FunctionTagStyle;
   referenceManualLanguages: string[];
   foldingLanguages: string[];
 }
@@ -13,6 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
   let {
     completionLanguages,
     prefix,
+    functionTagStyle,
     referenceManualLanguages,
     foldingLanguages,
   } = vscode.workspace.getConfiguration("language-mtml") as unknown as Config;
@@ -22,6 +25,7 @@ export function activate(context: vscode.ExtensionContext) {
     ({
       completionLanguages,
       prefix,
+      functionTagStyle,
       referenceManualLanguages,
       foldingLanguages,
     } = vscode.workspace.getConfiguration(
@@ -316,9 +320,29 @@ ${Object.values(tagData.modifiers)
       "$"
     );
 
+  const documentRangeFormattingEditProvider =
+    vscode.languages.registerDocumentRangeFormattingEditProvider("mtml", {
+      provideDocumentRangeFormattingEdits(
+        document: vscode.TextDocument,
+        range: vscode.Range
+      ): vscode.TextEdit[] | undefined {
+        const text = document.getText(range);
+        const formattedText = serialize(parse(text), {
+          prefix,
+          functionTagStyle: FunctionTagStyle[functionTagStyle],
+        });
+        if (text === formattedText) {
+          return;
+        }
+
+        return [new vscode.TextEdit(range, formattedText)];
+      },
+    });
+
   context.subscriptions.push(
     completionItemProvider,
     hoverProvider,
-    foldingRangeProvider
+    foldingRangeProvider,
+    documentRangeFormattingEditProvider
   );
 }

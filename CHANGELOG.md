@@ -4,6 +4,12 @@ All notable changes to the "mtml" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.8] - 2023-01-03
+
+### Added
+
+- Added Formatting support.
+
 ## [0.0.7] - 2022-12-07
 
 - Update completion data.
