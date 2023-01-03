@@ -6,6 +6,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 
 ## [0.0.8] - 2023-01-03
 
+### Changed
+
+- Update npm package mtml-parser to 0.0.5.
+
+## [0.0.8] - 2023-01-03
+
 ### Added
 
 - Added Formatting support.
