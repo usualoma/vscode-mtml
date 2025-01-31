@@ -2,7 +2,7 @@
   "name": "language-mtml",
   "displayName": "MTML",
   "description": "Syntax support for the Movable Type Markup Language.",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "engines": {
     "vscode": "^1.72.0"
   },
@@ -75,7 +75,10 @@
           "type": "string",
           "default": "Dollar",
           "description": "%config.functionTagStyle%",
-          "enum": ["Dollar", "SelfClosing"],
+          "enum": [
+            "Dollar",
+            "SelfClosing"
+          ],
           "enumDescriptions": [
             "%config.functionTagStyle.dollar%",
             "%config.functionTagStyle.selfClosing%"
