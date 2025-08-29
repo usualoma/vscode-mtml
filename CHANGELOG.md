@@ -4,6 +4,13 @@ All notable changes to the "mtml" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.12] - 2025-08-29
+
+### Fixed
+
+- Update npm package mtml-parser to 0.0.9.
+    - Fix multi byte char code handling.
+
 ## [0.0.11] - 2025-01-31
 
 ### Changed
